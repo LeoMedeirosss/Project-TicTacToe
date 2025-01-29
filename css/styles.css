@@ -90,3 +90,48 @@
     display: inline-block;
     margin-top: 18px;
 }
+
+/* .hide {
+    display:none !important;
+} */
+
+#scoreboard {
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 23px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.score-box {
+    margin: 0 20px;
+}
+
+#x-scoreboard {
+    color: red;
+    margin-right: 4px;
+}
+
+#o-scoreboard {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid green;
+    border-radius: 50%;
+}
+
+#message p{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 150px;
+    width: 450px;
+    font-size: 45px;
+    background-color: #000000;
+    color:antiquewhite;
+    display: none;
+    padding: 18px;
+}
