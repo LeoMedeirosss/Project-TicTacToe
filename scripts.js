@@ -195,3 +195,12 @@ function checkWinCondicion(){
     }
 
 }
+
+//limpa o jogo, declara quem venceu e atualiza o placar
+function declareWinner(winner) {
+
+    let scoreboardX = document.querySelector("#scoreboard-1")
+    let scoreboardY = document.querySelector("#scoreboard-2")
+    let msg = " ";
+
+}
