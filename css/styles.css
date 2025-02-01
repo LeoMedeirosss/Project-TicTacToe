@@ -91,9 +91,9 @@
     margin-top: 18px;
 }
 
-/* .hide {
+.hide {
     display:none !important;
-} */
+} 
 
 #scoreboard {
     font-weight: bold;
@@ -132,6 +132,5 @@
     font-size: 45px;
     background-color: #000000;
     color:antiquewhite;
-    display: none;
     padding: 18px;
 }
