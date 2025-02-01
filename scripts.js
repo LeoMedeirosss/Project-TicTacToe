@@ -210,7 +210,6 @@ function checkWinCondicion(){
 
     //empate
     let cont = 0
-
     for(let i = 0;i < boxes.length; i++){
         if(boxes[i].childNodes[0] != undefined){
             cont = cont + 1
@@ -230,13 +229,19 @@ function declareWinner(winner) {
     let msg = " ";
 
     if(winner == "x") {
+
         scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1
         msg = "O jogador 1 venceu"
+
     } else if(winner == "o") {
+
         scoreboardY.textContent = (parseInt(scoreboardY.textContent) || 0) + 1;
         msg = "O jogador 2 venceu"
+
     } else {
+
         msg = "Deu velha"
+
     }
 
     //exibir msg
@@ -254,12 +259,13 @@ function declareWinner(winner) {
     let boxesToRemove = document.querySelectorAll(".box div")
 
     for(let i = 0; i < boxesToRemove.length; i++){
+
        boxesToRemove[i].parentNode.removeChild(boxesToRemove[i])
+
     }
 }
 
 function computerPlay(){
-
     let clonedO = o.cloneNode(true)
     cont = 0
     filled = 0
@@ -270,19 +276,25 @@ function computerPlay(){
         //só preencher se a box estiver vazia
         if(boxes[i].childNodes[0] == undefined) {
             if(randomNumber <= 1) {
+
                 boxes[i].appendChild(clonedO)
                 cont++
                 break
+
             }
         //check de quantas boxes estão preenchidas
         } else {
+
             filled++
+
         }
 
     }
 
     if(cont == 0 && filled < 9) {
+
         computerPlay()
+
     }
 
 }
