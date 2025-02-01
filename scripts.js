@@ -26,6 +26,13 @@ for(let i = 0; i < boxes.length; i++){
             //computar jogada
             if(player1 == player2) {
                 player1++
+
+                if(secondPlayer == "ai-player"){
+                    
+                    computerPlay()
+                    player2++
+                }
+
             } else {
                 player2++
             }
@@ -35,6 +42,25 @@ for(let i = 0; i < boxes.length; i++){
         }
     });
 
+}
+
+//eventos bottões
+for(let i = 0; i < buttons.length; i++ ){
+
+    buttons[i].addEventListener("click",function(){
+        secondPlayer = this.getAttribute("id")
+
+        for(j = 0; j < buttons.length; j++) {
+            buttons[j].style.display = "none"
+        }
+
+        setTimeout(function(){
+        
+            let container = document.querySelector("#conteiner2")
+            container.classList.remove("hide")
+        }, 650)
+    
+    })
 }
 
 //function para definir quem vai jogar.
@@ -230,4 +256,33 @@ function declareWinner(winner) {
     for(let i = 0; i < boxesToRemove.length; i++){
        boxesToRemove[i].parentNode.removeChild(boxesToRemove[i])
     }
+}
+
+function computerPlay(){
+
+    let clonedO = o.cloneNode(true)
+    cont = 0
+    filled = 0
+
+    for(let i = 0; i < boxes.length; i++){
+
+        let randomNumber = Math.floor(Math.random() * 5)
+        //só preencher se a box estiver vazia
+        if(boxes[i].childNodes[0] == undefined) {
+            if(randomNumber <= 1) {
+                boxes[i].appendChild(clonedO)
+                cont++
+                break
+            }
+        //check de quantas boxes estão preenchidas
+        } else {
+            filled++
+        }
+
+    }
+
+    if(cont == 0 && filled < 9) {
+        computerPlay()
+    }
+
 }
